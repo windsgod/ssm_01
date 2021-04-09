@@ -42,25 +42,36 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
-<!--&lt;!&ndash;解决调用html问题&ndash;&gt;-->
-<!--  <servlet-mapping>-->
-<!--    <servlet-name>default</servlet-name>-->
-<!--    <url-pattern>*.html</url-pattern>-->
-<!--  </servlet-mapping>-->
+  <!-- 使用默认servlet处理静态资源请求 -->
+  <!--后缀名为css/gif/jps/png/js的静态资源不拦截-->
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <url-pattern>*.gif</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.html</url-pattern>
+    <url-pattern>*.woff2</url-pattern>
+  </servlet-mapping>
+
 
   <!--配置中文乱码过滤器-->
   <filter>
-    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-name>characterEncodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
     </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
-    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-name>characterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
 
 </web-app>

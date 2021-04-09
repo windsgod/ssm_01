@@ -16,8 +16,24 @@ public class UserServiceImpl implements UserService {
     private UserDao userdao;
 
     @Override
+    public User login(User user) {
+        System.out.println("impl:登录方法调用");
+        return userdao.login(user);
+    }
+
+    @Override
+    public int register(User user) {
+        System.out.println("impl:注册方法调用");
+        int uid=userdao.register(user);
+        return uid;
+    }
+
+
+
+    /*@Override
     public List<User> findAll() {
         System.out.println("impl:查询所有用户。。。");
+        System.out.println(userdao);
         return userdao.findAll();
     }
 
@@ -43,7 +59,7 @@ public class UserServiceImpl implements UserService {
     public void upd(User user) {
         System.out.println("impl:修改方法。。。。");
         userdao.upd(user);
-    }
+    }*/
 
 
 }

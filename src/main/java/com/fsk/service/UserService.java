@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService {
 
-    public List<User> findAll();
+/*    public List<User> findAll();
 
     public void save(User user);
 
@@ -14,6 +14,9 @@ public interface UserService {
 
     public List<User> upd_find(User user);
 
-    public void upd(User user);
+    public void upd(User user);*/
+
+    public User login(User user);
+    public int register(User user);
 
 }

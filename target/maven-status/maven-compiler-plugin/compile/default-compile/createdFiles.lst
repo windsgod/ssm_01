@@ -1,6 +1,0 @@
-com\fsk\dao\UserDao.class
-com\fsk\controller\UserController.class
-com\fsk\test\test.class
-com\fsk\service\impl\UserServiceImpl.class
-com\fsk\service\UserService.class
-com\fsk\bean\User.class
